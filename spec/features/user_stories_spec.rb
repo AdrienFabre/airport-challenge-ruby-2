@@ -4,7 +4,7 @@ describe 'User Stories' do
   # So I can get passengers to a destination 
   # I want to instruct a plane to land at an airport
   it 'instructs a plane to land at an airport' do 
-    airport = Airport.new
+    airport = Airport.new(20)
     plane = Plane.new
     expect { airport.land(plane) }.not_to raise_error
   end
@@ -14,19 +14,32 @@ describe 'User Stories' do
 #   I want to instruct a plane to take off from an airport and confirm that it is no longer in the airport
 
   it 'instructs a plane to take off from an airport' do 
-    airport = Airport.new
+    airport = Airport.new(20)
     plane = Plane.new
     airport.land(plane)
     expect { airport.take_off(plane) }.not_to raise_error
   end
 
   it 'confirms that a plane is not longer in an airport' do 
-    airport = Airport.new
+    airport = Airport.new(20)
     plane = Plane.new
     airport.land(plane)
-    expect(airport.hangar[0]).to equal plane
+    expect(airport.planes[0]).to equal plane
     airport.take_off(plane)
-    expect(airport.hangar).to be_empty
+    expect(airport.planes).to be_empty
   end 
+
+#   As an air traffic controller 
+#   To ensure safety 
+#   I want to prevent landing when the airport is full 
+
+    it 'prevent landing when the airport is full' do 
+      airport = Airport.new(20)
+      plane = Plane.new
+      20.times do 
+        airport.land(plane)
+      end
+      expect { airport.land(plane) }.to raise_error 'Cannot land plane: airport full'
+    end 
 
 end

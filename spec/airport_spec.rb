@@ -2,7 +2,7 @@ require 'airport'
 
 describe Airport do 
 
-  subject(:airport) { described_class.new }
+  subject(:airport) { described_class.new(20) }
   let(:plane) { Plane.new }
   
 
@@ -15,14 +15,24 @@ describe Airport do
   end
 
   it 'can store a plane' do 
+    plane = double :plane
     airport.land(plane)
-    expect(airport.hangar[0]).to equal plane 
+    expect(airport.planes[0]).to equal plane 
   end 
 
   it 'can release a plane' do
+    plane = double :plane
     airport.land(plane)
     airport.take_off(plane) 
-    expect(airport.hangar).to be_empty
+    expect(airport.planes).to be_empty
+  end 
+
+  it 'does not allow landing when at capacity' do 
+    plane = double :plane
+    20.times do 
+      airport.land(plane)
+    end
+    expect { airport.land(plane) }.to raise_error 'Cannot land plane: airport full'
   end 
 
 end

@@ -1,18 +1,19 @@
 class Airport
 
-  attr_reader :hangar
+  attr_reader :planes
 
-  def initialize
-    @hangar = []
+  def initialize(capacity)
+    @capacity = capacity
+    @planes = []
   end
 
   def land(plane)
-    @hangar << plane
+    raise 'Cannot land plane: airport full' if @planes.length >= @capacity
+    @planes << plane
   end
 
   def take_off(plane)
-    @hangar.delete(plane)
-    return @hangar
+    @planes.delete(plane)
   end
 
 end
