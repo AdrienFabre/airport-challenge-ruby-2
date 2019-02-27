@@ -6,6 +6,7 @@ describe 'User Stories' do
   it 'instructs a plane to land at an airport' do 
     airport = Airport.new(20)
     plane = Plane.new
+    allow(airport).to receive(:stormy?).and_return false
     expect { airport.land(plane) }.not_to raise_error
   end
 
@@ -16,6 +17,7 @@ describe 'User Stories' do
   it 'instructs a plane to take off from an airport' do 
     airport = Airport.new(20)
     plane = Plane.new
+    allow(airport).to receive(:stormy?).and_return false
     airport.land(plane)
     expect { airport.take_off(plane) }.not_to raise_error
   end
@@ -23,6 +25,7 @@ describe 'User Stories' do
   it 'confirms that a plane is not longer in an airport' do 
     airport = Airport.new(20)
     plane = Plane.new
+    allow(airport).to receive(:stormy?).and_return false
     airport.land(plane)
     expect(airport.planes[0]).to equal plane
     airport.take_off(plane)
@@ -33,13 +36,32 @@ describe 'User Stories' do
 #   To ensure safety 
 #   I want to prevent landing when the airport is full 
 
-    it 'prevent landing when the airport is full' do 
+  context 'when airport is full'
+    it 'prevents landing' do 
       airport = Airport.new(20)
       plane = Plane.new
+      allow(airport).to receive(:stormy?).and_return false
       20.times do 
         airport.land(plane)
       end
       expect { airport.land(plane) }.to raise_error 'Cannot land plane: airport full'
+  end 
+
+# As an air traffic controller 
+# To ensure safety 
+# I want to prevent takeoff when weather is stormy 
+
+  context 'when weather is stormy'
+    it 'prevents landing' do 
+      airport = Airport.new(20)
+      plane = Plane.new
+      allow(airport).to receive(:stormy?).and_return true
+      expect { airport.land(plane) }.to raise_error 'Cannot land plane: weater is stormy'
     end 
+  end
+
+# As an air traffic controller 
+# To ensure safety 
+# I want to prevent landing when weather is stormy 
 
 end
