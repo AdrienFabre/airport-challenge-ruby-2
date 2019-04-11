@@ -50,6 +50,11 @@ describe Airport do
         expect(airport).to respond_to(:take_off).with(1).argument
       end
 
+      it 'returns the plane that took of' do 
+        airport.land(plane)
+        expect(airport.take_off(plane)).to eq plane
+      end
+
       it 'can release a plane' do
         allow(weather_reporter).to receive(:stormy?).and_return false
         airport.land(plane)

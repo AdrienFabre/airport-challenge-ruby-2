@@ -49,6 +49,21 @@ describe 'User Stories' do
       expect { default_airport.land(plane) }.to raise_error 'Cannot land plane: airport full'
     end
 
+    # As an air traffic controller
+    # So the system is consistent and correctly reports plane status and location
+    # I want to ensure a flying plane cannot take off and cannot be in an airport
+    it 'flying planes cannot take off' do 
+      airport.land(plane)
+      flying_plane = airport.take_off(plane)
+      expect { flying_plane.take_off }.to raise_error 'Plane can not take off: plane already flying'
+    end
+
+    it 'fying planes cannot be in an airport' do 
+      airport.land(plane)
+      flying_plane = airport.take_off(plane)
+      expect { flying_plane.airport }.to raise_error 'Plane can not be in an airport: plane already flying'
+    end
+
     context 'when airport is full' do
     # As an air traffic controller 
     # To ensure safety 
