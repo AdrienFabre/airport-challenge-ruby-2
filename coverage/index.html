@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-04-11T13:31:50+01:00">2019-04-11T13:31:50+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-04-11T13:39:40+01:00">2019-04-11T13:39:40+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.68%</span></span>
+    (<span class="covered_percent"><span class="green">98.8%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.61
+         4.52
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>5</b> files in total.
-    <b>76</b> relevant lines. 
-    <span class="green"><b>75</b> lines covered</span> and
+    <b>83</b> relevant lines. 
+    <span class="green"><b>82</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -52,12 +52,12 @@
       
       <tr>
         <td class="strong"><a href="#22e269236084fc804443cd5539fc489a8380d3c6" class="src_link" title="lib/airport.rb">lib/airport.rb</a></td>
-        <td class="green strong">93.75 %</td>
-        <td>29</td>
+        <td class="green strong">94.12 %</td>
+        <td>30</td>
+        <td>17</td>
         <td>16</td>
-        <td>15</td>
         <td>1</td>
-        <td>13.9</td>
+        <td>13.6</td>
       </tr>
       
       <tr>
@@ -73,9 +73,9 @@
       <tr>
         <td class="strong"><a href="#326c608927e32a55e575e943b630ae37ab600abb" class="src_link" title="spec/airport_spec.rb">spec/airport_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>55</td>
-        <td>30</td>
-        <td>30</td>
+        <td>63</td>
+        <td>34</td>
+        <td>34</td>
         <td>0</td>
         <td>2.1</td>
       </tr>
@@ -83,11 +83,11 @@
       <tr>
         <td class="strong"><a href="#dc307db90e7c20c2258428b0a574bb0ccd278040" class="src_link" title="spec/features/user_stories_spec.rb">spec/features/user_stories_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>67</td>
-        <td>27</td>
-        <td>27</td>
+        <td>71</td>
+        <td>29</td>
+        <td>29</td>
         <td>0</td>
-        <td>2.3</td>
+        <td>2.4</td>
       </tr>
       
       <tr>
@@ -119,10 +119,10 @@
         <div class="source_table" id="22e269236084fc804443cd5539fc489a8380d3c6">
   <div class="header">
     <h3>lib/airport.rb</h3>
-    <h4><span class="green">93.75 %</span> covered</h4>
+    <h4><span class="green">94.12 %</span> covered</h4>
     <div>
-      <b>16</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
+      <b>17</b> relevant lines. 
+      <span class="green"><b>16</b> lines covered</span> and
       <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
@@ -160,14 +160,14 @@
           <code class="ruby">  def initialize(capacity)</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="6">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="13" data-linenumber="6">
+          <span class="hits">13</span>
           
           <code class="ruby">    @capacity = capacity</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="7">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="13" data-linenumber="7">
+          <span class="hits">13</span>
           
           <code class="ruby">    @planes = []</code>
         </li>
@@ -226,79 +226,85 @@
           <code class="ruby">  def take_off(plane)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="17">
+        <li class="covered" data-hits="5" data-linenumber="17">
+          <span class="hits">5</span>
+          
+          <code class="ruby">    raise &#39;Cannot take off plane: weater is stormy&#39; if stormy?</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="18">
           <span class="hits">3</span>
           
           <code class="ruby">    @planes.delete(plane)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">  def full?</code>
         </li>
       
-        <li class="covered" data-hits="49" data-linenumber="23">
+        <li class="covered" data-hits="49" data-linenumber="24">
           <span class="hits">49</span>
           
           <code class="ruby">    @planes.length &gt;= @capacity</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">  def stormy?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
           <code class="ruby">    rand(1..6) &gt; 4</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">  end </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">end</code>
@@ -351,8 +357,8 @@
     <h3>spec/airport_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>30</b> relevant lines. 
-      <span class="green"><b>30</b> lines covered</span> and
+      <b>34</b> relevant lines. 
+      <span class="green"><b>34</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -384,14 +390,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="5">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="5">
+          <span class="hits">8</span>
           
           <code class="ruby">  subject(:airport) { described_class.new(20) }</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="6">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="6">
+          <span class="hits">6</span>
           
           <code class="ruby">  let(:plane) {  double :plane }</code>
         </li>
@@ -669,22 +675,70 @@
         <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby">    end </code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
           
           
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    context &#39;when stormy&#39; do </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &#39;raises an error&#39; do </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        allow(airport).to receive(:stormy?).and_return true</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="57">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        expect { airport.take_off(plane) }.to raise_error &#39;Cannot take off plane: weater is stormy&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby">end</code>
@@ -700,8 +754,8 @@
     <h3>spec/features/user_stories_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>27</b> relevant lines. 
-      <span class="green"><b>27</b> lines covered</span> and
+      <b>29</b> relevant lines. 
+      <span class="green"><b>29</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -721,14 +775,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="3">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="3">
+          <span class="hits">7</span>
           
           <code class="ruby">  let(:airport) { Airport.new(20) }</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="4">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="4">
+          <span class="hits">7</span>
           
           <code class="ruby">  let(:plane) {Plane.new }</code>
         </li>
@@ -1051,8 +1105,8 @@
           <code class="ruby">    before do </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="58">
+          <span class="hits">2</span>
           
           <code class="ruby">      allow(airport).to receive(:stormy?).and_return true</code>
         </li>
@@ -1093,19 +1147,43 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="covered" data-hits="1" data-linenumber="65">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    it &#39;prevents take off&#39; do </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="covered" data-hits="2" data-linenumber="66">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      expect { airport.take_off(plane) }.to raise_error &#39;Cannot take off plane: weater is stormy&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">end</code>

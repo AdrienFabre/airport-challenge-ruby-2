@@ -14,6 +14,7 @@ class Airport
   end
 
   def take_off(plane)
+    raise 'Cannot take off plane: weater is stormy' if stormy?
     @planes.delete(plane)
   end
 

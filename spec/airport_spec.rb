@@ -49,7 +49,15 @@ describe Airport do
       airport.land(plane)
       airport.take_off(plane) 
       expect(airport.planes).to be_empty
-    end 
+    end
+    
+    context 'when stormy' do 
+      it 'raises an error' do 
+        allow(airport).to receive(:stormy?).and_return true
+        expect { airport.take_off(plane) }.to raise_error 'Cannot take off plane: weater is stormy'
+      end
+    end
+
   end
   
 end

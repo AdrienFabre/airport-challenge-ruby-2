@@ -62,6 +62,10 @@ describe 'User Stories' do
       expect { airport.land(plane) }.to raise_error 'Cannot land plane: weater is stormy'
     end 
 
+    it 'prevents take off' do 
+      expect { airport.take_off(plane) }.to raise_error 'Cannot take off plane: weater is stormy'
+    end
+
   end
 
 end
