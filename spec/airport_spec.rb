@@ -51,6 +51,5 @@ describe Airport do
       expect(airport.planes).to be_empty
     end 
   end
-
   
 end
