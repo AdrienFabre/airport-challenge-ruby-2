@@ -2,9 +2,11 @@ require 'weather_reporter'
 
 class Airport
 
+  DEFAULT_CAPACITY = 20
+
   attr_reader :planes
 
-  def initialize(capacity, weather_reporter)
+  def initialize(weather_reporter, capacity = DEFAULT_CAPACITY)
     @capacity = capacity
     @weather_reporter = weather_reporter
     @planes = []
