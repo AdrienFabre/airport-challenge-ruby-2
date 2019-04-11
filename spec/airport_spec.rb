@@ -35,28 +35,38 @@ describe Airport do
     context 'when stormy' do 
       it 'raises an error' do 
         allow(airport).to receive(:stormy?).and_return true
-        expect { airport.land(plane) }.to raise_error 'Cannot land plane: weater is stormy'
+        expect { airport.land(plane) }.to raise_error 'Cannot land plane: weather is stormy'
       end
     end
   end
   
   describe '#take_off' do 
+    context 'when not stormy' do 
+      before do 
+        allow(weather_reporter).to receive(:stormy?).and_return false
+      end
 
-    it 'instructs a plane to take_off' do 
-      expect(airport).to respond_to(:take_off).with(1).argument
-    end
+      it 'instructs a plane to take_off' do 
+        expect(airport).to respond_to(:take_off).with(1).argument
+      end
 
-    it 'can release a plane' do
-      allow(weather_reporter).to receive(:stormy?).and_return false
-      airport.land(plane)
-      airport.take_off(plane) 
-      expect(airport.planes).to be_empty
+      it 'can release a plane' do
+        allow(weather_reporter).to receive(:stormy?).and_return false
+        airport.land(plane)
+        airport.take_off(plane) 
+        expect(airport.planes).to be_empty
+      end
+
+      it 'raises an error if plane is not at this airport' do 
+        other_airport = described_class.new(20, weather_reporter)
+        other_airport.land(plane)
+        expect { airport.take_off(plane) }.to raise_error 'Cannot take off plane: plane not at this airport'
+      end
     end
-    
     context 'when stormy' do 
       it 'raises an error' do 
         allow(weather_reporter).to receive(:stormy?).and_return true
-        expect { airport.take_off(plane) }.to raise_error 'Cannot take off plane: weater is stormy'
+        expect { airport.take_off(plane) }.to raise_error 'Cannot take off plane: weather is stormy'
       end
     end
 
