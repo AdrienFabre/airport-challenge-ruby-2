@@ -8,6 +8,8 @@
         null,
         8,
         6,
+        8,
+        null,
         null,
         1,
         1,
@@ -72,6 +74,9 @@
         1,
         null,
         1,
+        null,
+        1,
+        13,
         13,
         13,
         null,
@@ -94,13 +99,23 @@
         null,
         null,
         1,
-        0,
+        51,
+        null,
+        null
+      ],
+      "/home/adrien/Projects/airport_challenge_ruby/lib/weather_reporter.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
         null,
         null
       ],
       "/home/adrien/Projects/airport_challenge_ruby/spec/features/user_stories_spec.rb": [
         1,
         null,
+        7,
         7,
         7,
         null,
@@ -135,7 +150,6 @@
         null,
         null,
         null,
-        1,
         1,
         1,
         1,
@@ -182,8 +196,29 @@
         1,
         null,
         null
+      ],
+      "/home/adrien/Projects/airport_challenge_ruby/spec/weather_reporter_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        3,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1554986380
+    "timestamp": 1554987695
   }
 }
